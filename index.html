@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-commerce Apparel Company</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+.product-tile {
+  background-color: #fff;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-tile img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+footer form {
+  margin-top: 10px;
+}
+
+footer input, footer button {
+  padding: 5px 10px;
+}
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Profile</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="product-grid">
+      <div class="product-tile">
+        <img src="product1.jpg" alt="Product 1">
+        <h3>Product 1</h3>
+        <p>$19.99</p>
+      </div>
+      <div class="product-tile">
+        <img src="product2.jpg" alt="Product 2">
+        <h3>Product 2</h3>
+        <p>$24.99</p>
+      </div>
+      <div class="product-tile">
+        <img src="product3.jpg" alt="Product 3">
+        <h3>Product 3</h3>
+        <p>$14.99</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 E-commerce Apparel Company</p>
+    <form>
+      <h3>Newsletter Signup</h3>
+      <label for="email-input">Enter your email:</label>
+      <input type="email" id="email-input" placeholder="Enter your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </footer>
+
+  <script src="script.js">
+    // Function to display images on the screen
+function displayImages() {
+  // Get the product-tile elements
+  const productTiles = document.querySelectorAll('.product-tile');
+
+  // Loop through the product tiles and set the image source
+  productTiles.forEach((tile, index) => {
+    const img = tile.querySelector('img');
+    img.src = `product${index + 1}.jpg`;
+  });
+}
+
+// Call the displayImages function when the page loads
+window.addEventListener('load', displayImages);
+  </script>
+</body>
+</html>
